@@ -43,3 +43,16 @@
   root.__STATE__ = state;
   root.renderApp = render;
 })(window);
+
+document.getElementsByClassName("addEntity")[0].addEventListener("click", ()=>{
+  const header = window.prompt("entity name");
+  window.__INITIAL_STATE__.entities.push(
+    {
+      name: header,
+      top: 10,
+      left: 200,
+      fields: []
+    }
+  )
+  window.renderApp();
+});
